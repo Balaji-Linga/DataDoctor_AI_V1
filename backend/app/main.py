@@ -27,6 +27,7 @@ MAX_UPLOAD_SIZE = 10 * 1024 * 1024  # 10 MB
 ALLOWED_EXTENSIONS = {".csv"}
 
 # Local development origins. Add your deployed frontend URL later.
+# Local development and deployed frontend origins.
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -34,11 +35,13 @@ app.add_middleware(
         "http://localhost:5173",
         "http://127.0.0.1:3000",
         "http://127.0.0.1:5173",
+        "https://datadoctor-ai.netlify.app",
     ],
     allow_credentials=True,
     allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["*"],
 )
+
 
 
 # --------------------------------------------------
